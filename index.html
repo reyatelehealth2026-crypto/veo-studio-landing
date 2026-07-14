@@ -6,7 +6,7 @@
   <title>VEO Studio — Thai-first AI Reel Studio | จากบรีฟไทย เป็นคลิปพร้อมโพสต์</title>
   <meta name="description" content="VEO Studio สตูดิโอ AI สร้างคลิป 9:16 สำหรับคนไทย — เปลี่ยนบรีฟสั้น ๆ เป็น prompt, storyboard, เสียงพากย์ไทย และคลิปพร้อมโพสต์ Reels / TikTok / Shorts ในโฟลว์เดียว" />
   <meta name="theme-color" content="#08090d" />
-  <link rel="canonical" href="https://veo.studio/" />
+  <link rel="canonical" href="https://veo-th.vercel.app/" />
 
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%2335d2e6'/%3E%3Cstop offset='50%25' stop-color='%23f0bf63'/%3E%3Cstop offset='100%25' stop-color='%23e34d86'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='%23070709'/%3E%3Cpath d='M20 16 L44 16 L44 22 L26 22 L26 30 L40 30 L40 36 L26 36 L26 48 L20 48 Z' fill='url(%23g)'/%3E%3Cpath d='M40 40 L52 47 L40 54 Z' fill='%23f0bf63'/%3E%3C/svg%3E" />
 
@@ -14,15 +14,15 @@
   <meta property="og:site_name" content="VEO Studio" />
   <meta property="og:title" content="VEO Studio — Thai-first AI Reel Studio" />
   <meta property="og:description" content="เปลี่ยนบรีฟไทยสั้น ๆ เป็นคลิป 9:16 พร้อมโพสต์ — prompt, storyboard, เสียงพากย์ไทย และ output pack ในโฟลว์เดียว" />
-  <meta property="og:url" content="https://veo.studio/" />
+  <meta property="og:url" content="https://veo-th.vercel.app/" />
   <meta property="og:locale" content="th_TH" />
-  <meta property="og:image" content="https://veo.studio/og-cover.jpg" />
+  <meta property="og:image" content="https://veo-th.vercel.app/og-cover.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="VEO Studio — Thai-first AI Reel Studio" />
   <meta name="twitter:description" content="เปลี่ยนบรีฟไทยสั้น ๆ เป็นคลิป 9:16 พร้อมโพสต์ในโฟลว์เดียว" />
-  <meta name="twitter:image" content="https://veo.studio/og-cover.jpg" />
+  <meta name="twitter:image" content="https://veo-th.vercel.app/og-cover.jpg" />
 
   <script type="application/ld+json">
   {
@@ -31,7 +31,7 @@
     "name": "VEO Studio",
     "applicationCategory": "MultimediaApplication",
     "operatingSystem": "Web",
-    "url": "https://veo.studio/",
+    "url": "https://veo-th.vercel.app/",
     "description": "Thai-first AI reel studio สำหรับสร้าง prompt, storyboard, เสียงพากย์ไทย และคลิป 9:16 พร้อมโพสต์",
     "offers": [
       { "@type": "Offer", "name": "Beta 399", "price": "399", "priceCurrency": "THB" },
@@ -43,6 +43,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@400;500;600;700&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+
+  <!-- Vercel Web Analytics — visitors/pageviews, cookieless (enable in Vercel → Analytics) + Speed Insights -->
+  <script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments);};</script>
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script defer src="/_vercel/speed-insights/script.js"></script>
 
   <style>
     :root {
@@ -773,6 +778,54 @@
         vids.forEach(function (v) { vio.observe(v); });
       } else {
         vids.forEach(tryPlay);
+      }
+
+      // ===== analytics: visitors auto-tracked by Vercel; add view + click events =====
+      // dual-sink → Vercel Web Analytics (window.va) + GA4 (window.gtag) if present. No PII.
+      var track = function (name, props) {
+        try { if (window.va) window.va('event', Object.assign({ name: name }, props || {})); } catch (e) {}
+        try { if (window.gtag) window.gtag('event', name, props || {}); } catch (e) {}
+      };
+
+      // คนกด — CTA buttons, app links, in-page anchors (delegated)
+      document.addEventListener('click', function (e) {
+        var a = e.target.closest ? e.target.closest('a[href]') : null;
+        if (!a) return;
+        var href = a.getAttribute('href') || '';
+        if (!a.classList.contains('btn') && href.indexOf('xn--42cfc0k1a8b.net') === -1 && href.charAt(0) !== '#') return;
+        var dest = /\/create/.test(href) ? 'create' : /\/pricing/.test(href) ? 'pricing'
+                 : /\/playbook/.test(href) ? 'playbook' : href.charAt(0) === '#' ? 'anchor' : 'other';
+        var sec = a.closest('section');
+        var loc = a.closest('#nav') ? 'nav' : (sec && sec.id) || (a.closest('footer') ? 'footer' : 'page');
+        track('cta_click', { label: (a.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 60), dest: dest, loc: loc });
+      }, true);
+
+      // คนดู — first play of each hero/showcase clip
+      vids.forEach(function (v) {
+        v.addEventListener('play', function () {
+          if (v.dataset.played) return; v.dataset.played = '1';
+          track('video_play', { clip: (v.currentSrc || v.src || '').split('/').pop() });
+        });
+      });
+
+      // engagement — scroll-depth milestones (one-shot each)
+      var marks = [25, 50, 75, 90], seen = {};
+      window.addEventListener('scroll', function () {
+        var h = document.documentElement.scrollHeight - window.innerHeight;
+        var pct = h > 0 ? (window.scrollY / h) * 100 : 0;
+        marks.forEach(function (m) { if (pct >= m && !seen[m]) { seen[m] = 1; track('scroll_depth', { percent: m }); } });
+      }, { passive: true });
+
+      // section views — one-shot per section
+      if ('IntersectionObserver' in window) {
+        var sio = new IntersectionObserver(function (entries) {
+          entries.forEach(function (en) {
+            if (en.isIntersecting) { track('section_view', { section: en.target.id }); sio.unobserve(en.target); }
+          });
+        }, { threshold: 0.4 });
+        ['showcase', 'features', 'how', 'pricing', 'faq'].forEach(function (id) {
+          var s = document.getElementById(id); if (s) sio.observe(s);
+        });
       }
     })();
   </script>

@@ -47,6 +47,20 @@ vercel --prod   # production
 ถ้าย้ายโดเมนอีก ให้แก้ 5 จุดนี้ให้ตรงโดเมนใหม่
 (ปุ่ม CTA ชี้ไปตัวแอปที่ **จองคิว.net** `/create` `/pricing` `/playbook` — **ไม่ต้องแก้**)
 
+## Analytics / Insights
+
+เปิด **Vercel Web Analytics** ที่ Vercel → project → **Analytics → Enable** (cookieless ไม่ต้องมี cookie banner)
+หน้านี้ฝัง script ไว้แล้ว รวม **Speed Insights** (Web Vitals จริงจากผู้ใช้)
+
+**Event ที่เก็บ** (ดูใน Vercel → Analytics → Custom Events):
+- `cta_click` — คนกดปุ่ม/ลิงก์ · props: `label`, `dest` (create/pricing/playbook/anchor), `loc`
+- `video_play` — คนดูคลิป (เล่นครั้งแรกของแต่ละคลิป) · props: `clip`
+- `scroll_depth` — เลื่อนถึง 25 / 50 / 75 / 90%
+- `section_view` — เห็น section: showcase / features / how / pricing / faq
+
+**เพิ่ม Google Analytics 4 (ถ้าต้องการ funnel ลึก):** วาง gtag snippet มาตรฐาน (ที่มี `G-XXXXXXX`) ใน `<head>`
+— event ทั้งหมดข้างบนจะ **ส่งเข้า GA4 อัตโนมัติ** (`track()` sink เข้า `gtag` ให้แล้ว) ไม่ต้องแก้โค้ดเพิ่ม
+
 ## อัปเดตคลิป
 
 แทนไฟล์ใน `assets/` โดยใช้ **ชื่อไฟล์เดิม** — cache ตั้งไว้ 1 วัน (stale-while-revalidate 7 วัน)
