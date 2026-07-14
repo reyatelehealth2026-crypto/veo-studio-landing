@@ -49,17 +49,19 @@ vercel --prod   # production
 
 ## Analytics / Insights
 
-เปิด **Vercel Web Analytics** ที่ Vercel → project → **Analytics → Enable** (cookieless ไม่ต้องมี cookie banner)
-หน้านี้ฝัง script ไว้แล้ว รวม **Speed Insights** (Web Vitals จริงจากผู้ใช้)
+**ฝังไว้แล้ว:**
+- **Vercel Web Analytics + Speed Insights** — คนเข้า / pageviews / referrers / Web Vitals (cookieless). เปิดที่ Vercel → project → **Analytics** + **Speed Insights** → Enable
+- **Microsoft Clarity** (`xmi26z0g0e`) — heatmap + อัดเซสชัน (ฟรีไม่จำกัด). ดูที่ clarity.microsoft.com
 
-**Event ที่เก็บ** (ดูใน Vercel → Analytics → Custom Events):
+**Custom events** — `track()` ยิงเข้า Vercel (`va`) + GA4 (`gtag`) + Clarity (`clarity`) พร้อมกัน, ไม่มี PII:
 - `cta_click` — คนกดปุ่ม/ลิงก์ · props: `label`, `dest` (create/pricing/playbook/anchor), `loc`
 - `video_play` — คนดูคลิป (เล่นครั้งแรกของแต่ละคลิป) · props: `clip`
 - `scroll_depth` — เลื่อนถึง 25 / 50 / 75 / 90%
 - `section_view` — เห็น section: showcase / features / how / pricing / faq
 
-**เพิ่ม Google Analytics 4 (ถ้าต้องการ funnel ลึก):** วาง gtag snippet มาตรฐาน (ที่มี `G-XXXXXXX`) ใน `<head>`
-— event ทั้งหมดข้างบนจะ **ส่งเข้า GA4 อัตโนมัติ** (`track()` sink เข้า `gtag` ให้แล้ว) ไม่ต้องแก้โค้ดเพิ่ม
+> ⚠️ Vercel **Hobby (ฟรี)** เก็บได้แค่ page view — **custom events ต้องแพ็ก Pro**.
+> บนฟรีให้ดู custom events ผ่าน **Clarity** (เป็น event/filter ของ recording) หรือเพิ่ม **GA4**
+> (วาง gtag snippet ที่มี `G-XXXXXXX` ใน `<head>` → event เข้า GA4 อัตโนมัติ ฟรี ไม่ต้องแก้โค้ด)
 
 ## อัปเดตคลิป
 
