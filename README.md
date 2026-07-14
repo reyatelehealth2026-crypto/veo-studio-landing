@@ -35,16 +35,17 @@ vercel          # preview
 vercel --prod   # production
 ```
 
-## ⚠️ ตั้งค่าโดเมนก่อนขึ้นจริง
+## โดเมน / SEO
 
-`index.html` ฝัง URL โปรดักชันไว้ที่ **3 จุด** (ตอนนี้ = `https://xn--42cfc0k1a8b.net/` / จองคิว.net)
-ถ้าดีพลอยที่โดเมนอื่น ต้องแก้ให้ตรงโดเมนที่หน้านี้จะอยู่จริง เพื่อ SEO/แชร์ให้ถูก:
+`index.html` ตั้ง canonical + OG ไว้ที่ **`https://veo.studio/`** แล้ว รวม **5 จุด**:
 
-- `<link rel="canonical" href="…">`
-- `<meta property="og:url" content="…">`
-- `<meta property="og:image" content="…/og-cover.jpg">` และ `<meta name="twitter:image" …>`
+- `<link rel="canonical">`
+- `<meta property="og:url">`
+- `<meta property="og:image">` + `<meta name="twitter:image">` (`…/og-cover.jpg`)
+- JSON-LD `"url"`
 
-(ปุ่ม CTA ที่ชี้ไปแอป **ไม่ต้องแก้** — มันชี้ไปโดเมนแอปอยู่แล้ว)
+ถ้าย้ายโดเมนอีก ให้แก้ 5 จุดนี้ให้ตรงโดเมนใหม่
+(ปุ่ม CTA ชี้ไปตัวแอปที่ **จองคิว.net** `/create` `/pricing` `/playbook` — **ไม่ต้องแก้**)
 
 ## อัปเดตคลิป
 
