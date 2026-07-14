@@ -1,0 +1,780 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>VEO Studio — Thai-first AI Reel Studio | จากบรีฟไทย เป็นคลิปพร้อมโพสต์</title>
+  <meta name="description" content="VEO Studio สตูดิโอ AI สร้างคลิป 9:16 สำหรับคนไทย — เปลี่ยนบรีฟสั้น ๆ เป็น prompt, storyboard, เสียงพากย์ไทย และคลิปพร้อมโพสต์ Reels / TikTok / Shorts ในโฟลว์เดียว" />
+  <meta name="theme-color" content="#08090d" />
+  <link rel="canonical" href="https://xn--42cfc0k1a8b.net/" />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%2335d2e6'/%3E%3Cstop offset='50%25' stop-color='%23f0bf63'/%3E%3Cstop offset='100%25' stop-color='%23e34d86'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='%23070709'/%3E%3Cpath d='M20 16 L44 16 L44 22 L26 22 L26 30 L40 30 L40 36 L26 36 L26 48 L20 48 Z' fill='url(%23g)'/%3E%3Cpath d='M40 40 L52 47 L40 54 Z' fill='%23f0bf63'/%3E%3C/svg%3E" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="VEO Studio" />
+  <meta property="og:title" content="VEO Studio — Thai-first AI Reel Studio" />
+  <meta property="og:description" content="เปลี่ยนบรีฟไทยสั้น ๆ เป็นคลิป 9:16 พร้อมโพสต์ — prompt, storyboard, เสียงพากย์ไทย และ output pack ในโฟลว์เดียว" />
+  <meta property="og:url" content="https://xn--42cfc0k1a8b.net/" />
+  <meta property="og:locale" content="th_TH" />
+  <meta property="og:image" content="https://xn--42cfc0k1a8b.net/og-cover.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="VEO Studio — Thai-first AI Reel Studio" />
+  <meta name="twitter:description" content="เปลี่ยนบรีฟไทยสั้น ๆ เป็นคลิป 9:16 พร้อมโพสต์ในโฟลว์เดียว" />
+  <meta name="twitter:image" content="https://xn--42cfc0k1a8b.net/og-cover.jpg" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "VEO Studio",
+    "applicationCategory": "MultimediaApplication",
+    "operatingSystem": "Web",
+    "url": "https://xn--42cfc0k1a8b.net/",
+    "description": "Thai-first AI reel studio สำหรับสร้าง prompt, storyboard, เสียงพากย์ไทย และคลิป 9:16 พร้อมโพสต์",
+    "offers": [
+      { "@type": "Offer", "name": "Beta 399", "price": "399", "priceCurrency": "THB" },
+      { "@type": "Offer", "name": "Beta 799", "price": "799", "priceCurrency": "THB" }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@400;500;600;700&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      color-scheme: dark;
+
+      /* base */
+      --bg: #08090d;
+      --bg-2: #0b0d13;
+      --surface: #11141b;
+      --raised: #171b25;
+      --sunken: #0e1118;
+      --media: #050607;
+
+      /* ink */
+      --ink: #f5f7fb;
+      --muted: #aab2c2;
+      --faint: #838ca0;
+      --on-accent: #150c05;
+
+      /* vivid accents (high contrast, not muted) */
+      --gold: #f0bf63;
+      --gold-deep: #d6a54a;
+      --cyan: #35d2e6;
+      --cyan-hi: #7cebf6;
+      --coral: #ff6b5c;
+      --rose: #e34d86;
+
+      /* borders */
+      --line: rgba(255,255,255,.08);
+      --line-2: rgba(255,255,255,.14);
+      --line-3: rgba(255,255,255,.22);
+
+      /* gradients */
+      --grad-brand: linear-gradient(115deg, #f0bf63 0%, #ff6b5c 52%, #e34d86 100%);
+      --grad-action: linear-gradient(120deg, #35d2e6 0%, #f0bf63 100%);
+      --grad-ink: linear-gradient(180deg, #ffffff, #c9cfdb);
+
+      --radius: 22px;
+      --radius-lg: 30px;
+      --shadow: 0 30px 80px -34px rgba(0,0,0,.9);
+      --glow-gold: 0 18px 50px -14px rgba(240,191,99,.55);
+      --glow-cyan: 0 18px 50px -16px rgba(53,210,230,.5);
+
+      --font-display: "Anuphan", ui-sans-serif, system-ui, sans-serif;
+      --font-body: "IBM Plex Sans Thai", "Anuphan", ui-sans-serif, system-ui, sans-serif;
+      --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+      --maxw: 1200px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* atmosphere: gradient mesh + grain */
+    .atmos {
+      position: fixed; inset: 0; z-index: -2; pointer-events: none;
+      background:
+        radial-gradient(760px 560px at 6% -10%, rgba(53,210,230,.28), transparent 58%),
+        radial-gradient(820px 640px at 99% 0%, rgba(227,77,134,.26), transparent 56%),
+        radial-gradient(1040px 780px at 50% 122%, rgba(240,191,99,.20), transparent 60%),
+        radial-gradient(560px 420px at 84% 72%, rgba(53,210,230,.10), transparent 60%),
+        var(--bg);
+    }
+    .grain {
+      position: fixed; inset: 0; z-index: -1; pointer-events: none; opacity: .05;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img, video { display: block; max-width: 100%; }
+
+    .wrap { width: min(var(--maxw), calc(100% - 40px)); margin-inline: auto; }
+
+    /* focus + skip link */
+    a:focus-visible, button:focus-visible, summary:focus-visible {
+      outline: 2px solid var(--cyan-hi); outline-offset: 3px; border-radius: 10px;
+    }
+    .skip-link {
+      position: absolute; left: 16px; top: -64px; z-index: 200;
+      background: var(--gold); color: var(--on-accent); font-weight: 700;
+      padding: 10px 16px; border-radius: 10px; transition: top .2s ease;
+      font-family: var(--font-display);
+    }
+    .skip-link:focus-visible { top: 16px; }
+
+    /* ============ NAV ============ */
+    .nav-outer { position: sticky; top: 0; z-index: 100; transition: background .3s ease, border-color .3s ease, backdrop-filter .3s ease; border-bottom: 1px solid transparent; }
+    .nav-outer.scrolled { background: rgba(8,9,13,.72); backdrop-filter: blur(14px) saturate(140%); border-bottom-color: var(--line); }
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: 18px; height: 74px; }
+
+    .brand { display: inline-flex; align-items: center; gap: 12px; font-family: var(--font-display); font-weight: 700; letter-spacing: -.02em; font-size: 19px; }
+    .brand .mark { width: 40px; height: 40px; flex: none; }
+    .brand b { color: var(--ink); }
+    .brand .accent { background: var(--grad-brand); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+    .nav-links { display: flex; align-items: center; gap: 6px; }
+    .nav-links a { padding: 9px 14px; border-radius: 12px; color: var(--muted); font-size: 15px; transition: color .18s ease, background .18s ease; }
+    .nav-links a:hover { color: var(--ink); background: rgba(255,255,255,.05); }
+    .nav-cta { display: inline-flex; align-items: center; gap: 8px; }
+    .nav-links > .btn { display: none; }
+
+    .btn {
+      --btn-bg: transparent;
+      display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+      min-height: 48px; padding: 0 22px; border-radius: 14px;
+      font-family: var(--font-display); font-weight: 600; font-size: 15px; letter-spacing: .01em;
+      cursor: pointer; border: 1px solid transparent; white-space: nowrap;
+      transition: transform .16s cubic-bezier(.2,.8,.2,1), box-shadow .2s ease, background .2s ease, border-color .2s ease, color .2s ease;
+    }
+    .btn svg { width: 18px; height: 18px; }
+    .btn.sm { min-height: 42px; padding: 0 16px; font-size: 14px; }
+    .btn.primary { background: var(--grad-brand); color: var(--on-accent); box-shadow: var(--glow-gold); }
+    .btn.primary:hover { transform: translateY(-2px); box-shadow: 0 24px 60px -14px rgba(255,107,92,.6); }
+    .btn.ghost { border-color: var(--line-2); background: rgba(255,255,255,.03); color: var(--ink); }
+    .btn.ghost:hover { border-color: var(--line-3); background: rgba(255,255,255,.07); transform: translateY(-2px); }
+    .btn.cyan { background: var(--grad-action); color: var(--on-accent); box-shadow: var(--glow-cyan); }
+    .btn.cyan:hover { transform: translateY(-2px); box-shadow: 0 24px 60px -14px rgba(53,210,230,.6); }
+
+    .nav-toggle { display: none; width: 46px; height: 46px; border-radius: 12px; border: 1px solid var(--line-2); background: rgba(255,255,255,.04); cursor: pointer; padding: 0; }
+    .nav-toggle span { display: block; width: 18px; height: 2px; margin: 4px auto; background: var(--ink); border-radius: 2px; transition: transform .2s ease, opacity .2s ease; }
+
+    /* eyebrow / labels */
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 9px;
+      font-family: var(--font-mono); font-size: 11.5px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase;
+      color: var(--cyan-hi);
+    }
+    .eyebrow::before { content: ""; width: 22px; height: 1px; background: linear-gradient(90deg, var(--cyan), transparent); }
+    .eyebrow.gold { color: var(--gold); }
+    .eyebrow.gold::before { background: linear-gradient(90deg, var(--gold), transparent); }
+
+    .section { padding: 92px 0; position: relative; }
+    .section-head { max-width: 720px; margin-bottom: 46px; }
+    h1, h2, h3 { font-family: var(--font-display); font-weight: 700; margin: 0; }
+    .section-head h2 { font-size: clamp(30px, 4.4vw, 50px); line-height: 1.08; letter-spacing: -.03em; margin-top: 16px; }
+    .section-head p { color: var(--muted); font-size: 18px; margin-top: 16px; }
+    .grad-text { background: var(--grad-brand); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .grad-cyan { background: var(--grad-action); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+    /* ============ HERO ============ */
+    .hero { padding: 56px 0 84px; position: relative; }
+    .hero::before { content: ""; position: absolute; z-index: -1; left: -12%; top: -6%; width: 62%; height: 78%; pointer-events: none;
+      background: radial-gradient(closest-side, rgba(53,210,230,.16), transparent 72%); filter: blur(26px); }
+    .hero-grid { display: grid; grid-template-columns: minmax(0,1.15fr) minmax(0,.85fr); gap: 56px; align-items: center; }
+    .hero h1 { font-size: clamp(34px, 6.6vw, 88px); line-height: .98; letter-spacing: -.045em; margin-top: 22px; }
+    .hero .lead { color: var(--muted); font-size: clamp(17px, 1.5vw, 20px); max-width: 560px; margin-top: 24px; }
+    .hero .actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; }
+    .hero .microcopy { display: flex; align-items: center; gap: 10px; margin-top: 18px; color: var(--faint); font-size: 13.5px; font-family: var(--font-mono); }
+    .hero .microcopy .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--cyan); box-shadow: 0 0 12px var(--cyan); }
+
+    .hero-stats { display: flex; flex-wrap: wrap; gap: 28px; margin-top: 42px; padding-top: 30px; border-top: 1px solid var(--line); }
+    .hero-stats .s b { display: block; font-family: var(--font-display); font-size: 30px; font-weight: 700; background: var(--grad-action); -webkit-background-clip: text; background-clip: text; color: transparent; letter-spacing: -.02em; }
+    .hero-stats .s span { color: var(--faint); font-size: 13.5px; }
+
+    /* reel device */
+    .reel-stage { position: relative; justify-self: end; width: 100%; max-width: 360px; }
+    .reel-glow { position: absolute; inset: -30px; background: radial-gradient(closest-side, rgba(240,191,99,.28), transparent 72%); filter: blur(8px); z-index: -1; }
+    .reel {
+      position: relative; aspect-ratio: 9/16; border-radius: 34px; overflow: hidden;
+      border: 1px solid var(--line-2); background: var(--media);
+      box-shadow: var(--shadow), inset 0 1px rgba(255,255,255,.08);
+    }
+    .reel > video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .reel .scan { position: absolute; inset: 0; pointer-events: none; background: repeating-linear-gradient(0deg, rgba(255,255,255,.045) 0 1px, transparent 1px 3px); mix-blend-mode: overlay; opacity: .5; }
+    .reel .vignette { position: absolute; inset: 0; pointer-events: none; background: linear-gradient(180deg, rgba(0,0,0,.35), transparent 24%, transparent 62%, rgba(0,0,0,.72)); }
+    .reel .hud-top { position: absolute; top: 16px; left: 16px; right: 16px; display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+    .tag { font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: .06em; padding: 6px 10px; border-radius: 999px; border: 1px solid var(--line-2); background: rgba(0,0,0,.45); backdrop-filter: blur(6px); }
+    .tag.live { color: var(--coral); display: inline-flex; align-items: center; gap: 7px; }
+    .tag.live::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--coral); box-shadow: 0 0 10px var(--coral); animation: pulse 1.4s ease-in-out infinite; }
+    .reel .hud-bot { position: absolute; left: 16px; right: 16px; bottom: 16px; padding: 14px 16px; border-radius: 18px; border: 1px solid var(--line-2); background: rgba(5,6,7,.6); backdrop-filter: blur(10px); }
+    .reel .hud-bot .shot { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .16em; text-transform: uppercase; color: var(--gold); }
+    .reel .hud-bot p { margin: 6px 0 0; font-size: 14px; color: var(--ink); line-height: 1.5; }
+    .reel .timeline { position: absolute; left: 16px; right: 16px; bottom: 96px; height: 4px; border-radius: 3px; background: rgba(255,255,255,.14); overflow: hidden; }
+    .reel .timeline i { position: absolute; inset: 0; width: 62%; background: var(--grad-action); border-radius: 3px; animation: scrub 6s ease-in-out infinite alternate; }
+
+    /* corner ticks decoration */
+    .reel-stage .ticks { position: absolute; inset: -14px; pointer-events: none; }
+    .reel-stage .ticks span { position: absolute; width: 16px; height: 16px; border: 1.5px solid var(--gold); opacity: .55; }
+    .reel-stage .ticks span:nth-child(1){ top:0; left:0; border-right:0; border-bottom:0; }
+    .reel-stage .ticks span:nth-child(2){ top:0; right:0; border-left:0; border-bottom:0; }
+    .reel-stage .ticks span:nth-child(3){ bottom:0; left:0; border-right:0; border-top:0; }
+    .reel-stage .ticks span:nth-child(4){ bottom:0; right:0; border-left:0; border-top:0; }
+
+    @keyframes pulse { 0%,100%{ transform: scale(1); opacity: 1; } 50%{ transform: scale(.7); opacity: .5; } }
+    @keyframes scrub { from { width: 10%; } to { width: 92%; } }
+    @media (prefers-reduced-motion: reduce) { .reel .timeline i { animation: none; width: 62%; } }
+    @media (prefers-reduced-motion: reduce) { .tag.live::before { animation: none; } }
+
+    /* ============ REEL STRIP (visual marquee) ============ */
+    .reel-strip { position: relative; overflow: hidden; border-block: 1px solid var(--line); background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0)); padding: 30px 0; }
+    .reel-strip::before, .reel-strip::after { content: ""; position: absolute; top: 0; bottom: 0; width: clamp(60px, 12vw, 160px); z-index: 3; pointer-events: none; }
+    .reel-strip::before { left: 0; background: linear-gradient(90deg, var(--bg) 12%, transparent); }
+    .reel-strip::after { right: 0; background: linear-gradient(270deg, var(--bg) 12%, transparent); }
+    .reel-strip .label { position: absolute; z-index: 4; top: 12px; left: 50%; transform: translateX(-50%); font-family: var(--font-mono); font-size: 10.5px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--faint); }
+    .reel-track { display: flex; gap: 16px; width: max-content; padding-top: 8px; animation: reelscroll 46s linear infinite; will-change: transform; }
+    .reel-strip:hover .reel-track { animation-play-state: paused; }
+    .reel-tile { position: relative; flex: none; width: 132px; aspect-ratio: 9/16; border-radius: 16px; overflow: hidden; margin: 0; border: 1px solid var(--line-2); background: #000; box-shadow: 0 18px 40px -26px rgba(0,0,0,.9); transition: transform .25s cubic-bezier(.2,.8,.2,1), border-color .25s ease; }
+    .reel-tile:hover { transform: translateY(-6px) scale(1.03); border-color: rgba(240,191,99,.5); }
+    .reel-tile img { width: 100%; height: 100%; object-fit: cover; }
+    .reel-tile .grad { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.32), transparent 34%, transparent 58%, rgba(0,0,0,.72)); }
+    .reel-tile .chip { position: absolute; left: 8px; bottom: 8px; z-index: 2; font-family: var(--font-mono); font-size: 9.5px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; padding: 4px 8px; border-radius: 999px; color: var(--ink); background: rgba(5,6,7,.55); border: 1px solid var(--line-2); backdrop-filter: blur(6px); }
+    .reel-tile .play { position: absolute; top: 8px; right: 8px; z-index: 2; width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center; background: rgba(5,6,7,.5); border: 1px solid var(--line-2); backdrop-filter: blur(6px); }
+    .reel-tile .play svg { width: 10px; height: 10px; fill: var(--gold); }
+    @keyframes reelscroll { to { transform: translateX(-50%); } }
+    /* The reel strip is a core showcase element — keep it scrolling even under reduced-motion
+       (it's a gentle horizontal image scroll, not parallax). Slow it down as a courtesy. */
+    @media (prefers-reduced-motion: reduce){ .reel-track { animation-duration: 70s; } }
+
+    /* ============ SHOWCASE ============ */
+    .showcase-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .vcard { border: 1px solid var(--line); border-radius: var(--radius-lg); overflow: hidden; background: var(--surface); transition: border-color .2s ease, transform .2s ease; }
+    .vcard:hover { border-color: rgba(240,191,99,.42); transform: translateY(-4px); box-shadow: 0 24px 60px -34px rgba(240,191,99,.3); }
+    .vcard .frame { position: relative; aspect-ratio: 9/16; background: #000; }
+    .vcard .frame video { width: 100%; height: 100%; object-fit: cover; }
+    .vcard .frame .scan { position: absolute; inset: 0; pointer-events: none; background: repeating-linear-gradient(0deg, rgba(255,255,255,.04) 0 1px, transparent 1px 3px); opacity: .5; }
+    .vcard .frame .badge { position: absolute; top: 14px; right: 14px; font-family: var(--font-mono); font-size: 10.5px; font-weight: 700; padding: 5px 9px; border-radius: 8px; background: rgba(0,0,0,.5); border: 1px solid var(--line-2); backdrop-filter: blur(6px); }
+    .vcard .body { padding: 18px 20px 22px; }
+    .vcard .kicker { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .16em; text-transform: uppercase; color: var(--cyan-hi); }
+    .vcard h3 { font-size: 21px; margin-top: 6px; letter-spacing: -.02em; }
+    .vcard p { color: var(--muted); font-size: 14.5px; margin: 8px 0 0; }
+    .vcard .offer { display: inline-block; margin-top: 14px; padding: 8px 12px; border-radius: 12px; font-family: var(--font-display); font-weight: 600; font-size: 13.5px; color: var(--gold); border: 1px solid rgba(240,191,99,.3); background: rgba(240,191,99,.08); }
+
+    /* ============ FEATURES BENTO ============ */
+    .bento { display: grid; grid-template-columns: repeat(6, 1fr); gap: 18px; }
+    .cell { border: 1px solid var(--line); border-radius: var(--radius-lg); background: var(--surface); padding: 28px; position: relative; overflow: hidden; transition: border-color .2s ease, transform .2s ease; }
+    .cell:hover { border-color: var(--line-3); transform: translateY(-3px); }
+    .cell.span3 { grid-column: span 3; }
+    .cell.span2 { grid-column: span 2; }
+    .cell.span4 { grid-column: span 4; }
+    .cell .ic { width: 46px; height: 46px; border-radius: 13px; display: grid; place-items: center; border: 1px solid var(--line-2); background: var(--raised); margin-bottom: 18px; }
+    .cell .ic svg { width: 22px; height: 22px; stroke: var(--gold); fill: none; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+    .cell.cy .ic svg { stroke: var(--cyan-hi); }
+    .cell.ro .ic svg { stroke: var(--rose); }
+    .cell h3 { font-size: 21px; letter-spacing: -.02em; }
+    .cell p { color: var(--muted); font-size: 14.5px; margin: 9px 0 0; }
+    .cell .modes { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+    .cell .modes span { font-family: var(--font-mono); font-size: 12px; padding: 6px 11px; border-radius: 999px; border: 1px solid var(--line-2); color: var(--muted); background: rgba(255,255,255,.02); }
+    .cell .glow { position: absolute; width: 260px; height: 260px; border-radius: 50%; filter: blur(44px); opacity: .32; right: -56px; top: -56px; z-index: 0; }
+    .cell > * { position: relative; z-index: 1; }
+
+    /* ============ STEPS ============ */
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; counter-reset: step; }
+    .step { border: 1px solid var(--line); border-radius: var(--radius); padding: 26px 24px; background: linear-gradient(180deg, var(--surface), var(--sunken)); position: relative; }
+    .step .num { font-family: var(--font-mono); font-size: 13px; font-weight: 700; color: var(--on-accent); background: var(--grad-brand); width: 34px; height: 34px; border-radius: 10px; display: grid; place-items: center; margin-bottom: 18px; }
+    .step h3 { font-size: 18px; letter-spacing: -.01em; }
+    .step p { color: var(--muted); font-size: 14px; margin: 8px 0 0; }
+
+    /* ============ PRICING ============ */
+    .price-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 20px; max-width: 860px; margin-inline: auto; }
+    .plan { border: 1px solid var(--line-2); border-radius: var(--radius-lg); padding: 34px 32px; background: var(--surface); position: relative; overflow: hidden; }
+    .plan.feat { border-color: transparent; background:
+        linear-gradient(var(--surface), var(--surface)) padding-box,
+        var(--grad-brand) border-box; box-shadow: 0 30px 80px -40px rgba(255,107,92,.5); }
+    .plan.feat::before { content: ""; position: absolute; inset: 0; z-index: 0; background: radial-gradient(320px 200px at 80% -10%, rgba(227,77,134,.16), transparent 70%); }
+    .plan > * { position: relative; z-index: 1; }
+    .plan .flag { position: absolute; top: 20px; right: 20px; font-family: var(--font-mono); font-size: 10.5px; font-weight: 700; letter-spacing: .1em; padding: 6px 11px; border-radius: 999px; color: var(--on-accent); background: var(--grad-brand); text-transform: uppercase; }
+    .plan .pname { font-family: var(--font-mono); font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--cyan-hi); }
+    .plan.feat .pname { color: var(--gold); }
+    .plan .price { display: flex; align-items: baseline; gap: 8px; margin-top: 14px; }
+    .plan .price b { font-family: var(--font-display); font-size: 52px; font-weight: 700; letter-spacing: -.03em; }
+    .plan .price s { color: var(--faint); text-decoration: none; font-size: 15px; }
+    .plan .quota { margin-top: 6px; color: var(--muted); font-size: 15px; }
+    .plan ul { list-style: none; padding: 0; margin: 24px 0 28px; display: grid; gap: 12px; }
+    .plan li { display: flex; align-items: flex-start; gap: 11px; font-size: 14.5px; color: var(--ink); }
+    .plan li svg { width: 18px; height: 18px; flex: none; margin-top: 2px; stroke: var(--cyan); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .plan.feat li svg { stroke: var(--gold); }
+    .plan .btn { width: 100%; }
+    .price-note { text-align: center; color: var(--faint); font-size: 13.5px; margin-top: 22px; font-family: var(--font-mono); }
+
+    /* ============ FAQ ============ */
+    .faq { max-width: 800px; margin-inline: auto; display: grid; gap: 12px; }
+    details { border: 1px solid var(--line); border-radius: 18px; background: var(--surface); overflow: hidden; transition: border-color .2s ease; }
+    details[open] { border-color: var(--line-3); }
+    summary { list-style: none; cursor: pointer; padding: 20px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; font-family: var(--font-display); font-weight: 600; font-size: 16.5px; }
+    summary::-webkit-details-marker { display: none; }
+    summary .chev { width: 20px; height: 20px; flex: none; stroke: var(--gold); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; transition: transform .25s ease; }
+    details[open] summary .chev { transform: rotate(180deg); }
+    details .ans { padding: 0 24px 22px; color: var(--muted); font-size: 15px; }
+
+    /* ============ CLOSING CTA ============ */
+    .final { border: 1px solid var(--line-2); border-radius: var(--radius-lg); padding: 56px; text-align: center; position: relative; overflow: hidden;
+      background: radial-gradient(700px 340px at 50% -20%, rgba(53,210,230,.14), transparent 62%), radial-gradient(600px 300px at 50% 130%, rgba(227,77,134,.14), transparent 60%), var(--sunken); }
+    .final h2 { font-size: clamp(30px, 4.6vw, 52px); line-height: 1.06; letter-spacing: -.03em; }
+    .final p { color: var(--muted); font-size: 18px; max-width: 560px; margin: 18px auto 0; }
+    .final .actions { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin-top: 32px; }
+
+    /* ============ FOOTER ============ */
+    .site-footer { border-top: 1px solid var(--line); padding: 46px 0 40px; margin-top: 40px; }
+    .foot-grid { display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+    .foot-links { display: flex; gap: 22px; color: var(--muted); font-size: 14.5px; }
+    .foot-links a:hover { color: var(--ink); }
+    .foot-meta { color: var(--faint); font-size: 13px; font-family: var(--font-mono); }
+
+    /* ============ REVEAL ANIM ============ */
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1); }
+    .reveal.in { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+
+    /* hero load stagger */
+    .hero .load { opacity: 0; transform: translateY(20px); animation: rise .8s cubic-bezier(.2,.7,.2,1) forwards; }
+    .hero .load.d1 { animation-delay: .05s; }
+    .hero .load.d2 { animation-delay: .15s; }
+    .hero .load.d3 { animation-delay: .25s; }
+    .hero .load.d4 { animation-delay: .35s; }
+    .hero .load.d5 { animation-delay: .45s; }
+    .reel-stage.load { opacity: 0; transform: translateY(24px) scale(.98); animation: rise .9s cubic-bezier(.2,.7,.2,1) .3s forwards; }
+    @keyframes rise { to { opacity: 1; transform: none; } }
+    @media (prefers-reduced-motion: reduce) { .hero .load, .reel-stage.load { opacity: 1; transform: none; animation: none; } }
+
+    /* ============ RESPONSIVE ============ */
+    @media (max-width: 940px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 44px; }
+      .reel-stage { justify-self: center; max-width: 320px; }
+      .bento { grid-template-columns: repeat(2, 1fr); }
+      .cell.span3, .cell.span2, .cell.span4 { grid-column: span 2; }
+      .steps { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 700px) {
+      .section { padding: 68px 0; }
+      .nav-links { display: none; position: absolute; top: 74px; left: 20px; right: 20px; flex-direction: column; align-items: stretch; gap: 4px; padding: 12px; border: 1px solid var(--line-2); border-radius: 18px; background: rgba(11,13,19,.96); backdrop-filter: blur(16px); box-shadow: var(--shadow); }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 12px 14px; }
+      .nav-cta.desktop { display: none; }
+      .nav-links .btn { display: inline-flex; width: 100%; margin-top: 6px; }
+      .nav-toggle { display: block; }
+      .showcase-grid { grid-template-columns: 1fr; }
+      .bento { grid-template-columns: 1fr; }
+      .cell.span3, .cell.span2, .cell.span4 { grid-column: span 1; }
+      .steps { grid-template-columns: 1fr; }
+      .price-grid { grid-template-columns: 1fr; }
+      .final { padding: 40px 24px; }
+      .hero-stats { gap: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="atmos" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+  <a class="skip-link" href="#main">ข้ามไปเนื้อหาหลัก</a>
+
+  <!-- NAV -->
+  <div class="nav-outer" id="nav">
+    <nav class="wrap nav" aria-label="เมนูหลัก">
+      <a class="brand" href="/" aria-label="VEO Studio หน้าแรก">
+        <svg class="mark" viewBox="0 0 64 64" aria-hidden="true">
+          <defs><linearGradient id="bm" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#35d2e6"/><stop offset="50%" stop-color="#f0bf63"/><stop offset="100%" stop-color="#e34d86"/>
+          </linearGradient></defs>
+          <rect width="64" height="64" rx="16" fill="#0e1118" stroke="rgba(255,255,255,.1)"/>
+          <path d="M20 16 L44 16 L44 22 L26 22 L26 30 L40 30 L40 36 L26 36 L26 48 L20 48 Z" fill="url(#bm)"/>
+          <path d="M40 40 L52 47 L40 54 Z" fill="#f0bf63"/>
+        </svg>
+        <span><b>VEO</b> <span class="accent">Studio</span></span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="เปิดเมนู">
+        <span></span><span></span><span></span>
+      </button>
+
+      <div class="nav-links" id="nav-links">
+        <a href="#showcase">ตัวอย่าง</a>
+        <a href="#features">ฟีเจอร์</a>
+        <a href="#how">วิธีใช้</a>
+        <a href="#pricing">ราคา</a>
+        <a href="#faq">คำถาม</a>
+        <a class="btn primary sm" href="https://xn--42cfc0k1a8b.net/create">เริ่มสร้าง Reel</a>
+      </div>
+      <div class="nav-cta desktop">
+        <a class="btn ghost sm" href="https://xn--42cfc0k1a8b.net/pricing">ดูราคา</a>
+        <a class="btn primary sm" href="https://xn--42cfc0k1a8b.net/create">เริ่มสร้าง Reel</a>
+      </div>
+    </nav>
+  </div>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero wrap">
+      <div class="hero-grid">
+        <div>
+          <span class="eyebrow load d1">THAI-FIRST AI REEL STUDIO</span>
+          <h1 class="load d2">จากบรีฟไทยสั้น ๆ<br><span class="grad-text">เป็นคลิปที่พร้อมยิงจริง</span></h1>
+          <p class="lead load d3">VEO Studio เปลี่ยนไอเดียขายของเป็น prompt, storyboard, เสียงพากย์ไทย และคลิป 9:16 พร้อมโพสต์ — ในโฟลว์เดียว เริ่มจากภาษาและบริบทการขายแบบไทย</p>
+          <div class="actions load d4">
+            <a class="btn primary" href="https://xn--42cfc0k1a8b.net/create">
+              เริ่มสร้าง Reel
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a class="btn ghost" href="#showcase">ดูตัวอย่างคลิป</a>
+          </div>
+          <div class="microcopy load d4"><span class="dot"></span> เริ่มฟรี ไม่ต้องผูกบัตร · อัปเกรดเป็นแพ็ก beta เมื่อพร้อม · ยกเลิกได้ทุกเมื่อ</div>
+
+          <div class="hero-stats load d5">
+            <div class="s"><b>9:16</b><span>พร้อมลง Reels · TikTok · Shorts</span></div>
+            <div class="s"><b>ไทย</b><span>บรีฟ พากย์ และซับภาษาไทย</span></div>
+            <div class="s"><b>~10 นาที</b><span>จากไอเดียถึงคลิปแรก</span></div>
+          </div>
+        </div>
+
+        <div class="reel-stage load">
+          <div class="reel-glow" aria-hidden="true"></div>
+          <div class="ticks" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+          <div class="reel">
+            <video src="assets/hero-reel.mp4" poster="assets/hero-reel.jpg" autoplay loop muted playsinline preload="metadata" aria-label="ตัวอย่างคลิปพรีเซนเตอร์รีวิวสินค้า สร้างด้วย VEO Studio"></video>
+            <div class="scan" aria-hidden="true"></div>
+            <div class="vignette" aria-hidden="true"></div>
+            <div class="hud-top">
+              <span class="tag">COMMERCE MODE</span>
+              <span class="tag live">LIVE</span>
+            </div>
+            <div class="timeline" aria-hidden="true"><i></i></div>
+            <div class="hud-bot">
+              <span class="shot">Shot 01 · Presenter review</span>
+              <p>พรีเซนเตอร์ AI ถือสินค้าจริง พูดขายด้วยโทนเป็นกันเอง</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REEL STRIP (visual marquee) -->
+    <section class="reel-strip" aria-label="ตัวอย่างคลิปที่สร้างด้วย VEO Studio">
+      <span class="label">สร้างจาก VEO Studio ทั้งหมด</span>
+      <div class="reel-track">
+        <a class="reel-tile" href="#showcase"><img src="assets/strip-1.jpg" alt="คลิปพรีเซนเตอร์รีวิวสินค้า"><span class="grad" aria-hidden="true"></span><span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><span class="chip">Commerce</span></a>
+        <a class="reel-tile" href="#showcase"><img src="assets/strip-2.jpg" alt="คลิปไวรัลสายเต้น"><span class="grad" aria-hidden="true"></span><span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><span class="chip">Viral</span></a>
+        <a class="reel-tile" href="#showcase"><img src="assets/strip-3.jpg" alt="คาแรกเตอร์อนิเมะขายสินค้า"><span class="grad" aria-hidden="true"></span><span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><span class="chip">อนิเมะ</span></a>
+        <a class="reel-tile" href="#showcase"><img src="assets/strip-4.jpg" alt="มาสคอต 3D"><span class="grad" aria-hidden="true"></span><span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><span class="chip">3D</span></a>
+        <a class="reel-tile" href="#showcase"><img src="assets/strip-5.jpg" alt="คลิปสายดราม่า"><span class="grad" aria-hidden="true"></span><span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><span class="chip">Story</span></a>
+        <a class="reel-tile" href="#showcase"><img src="assets/strip-6.jpg" alt="คลิปสไตล์ซีนีมาติก"><span class="grad" aria-hidden="true"></span><span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><span class="chip">Cinematic</span></a>
+        <!-- duplicate set for seamless loop -->
+        <a class="reel-tile" href="#showcase" aria-hidden="true" tabindex="-1"><img src="assets/strip-1.jpg" alt=""><span class="grad"></span><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><span class="chip">Commerce</span></a>
+        <a class="reel-tile" href="#showcase" aria-hidden="true" tabindex="-1"><img src="assets/strip-2.jpg" alt=""><span class="grad"></span><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><span class="chip">Viral</span></a>
+        <a class="reel-tile" href="#showcase" aria-hidden="true" tabindex="-1"><img src="assets/strip-3.jpg" alt=""><span class="grad"></span><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><span class="chip">อนิเมะ</span></a>
+        <a class="reel-tile" href="#showcase" aria-hidden="true" tabindex="-1"><img src="assets/strip-4.jpg" alt=""><span class="grad"></span><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><span class="chip">3D</span></a>
+        <a class="reel-tile" href="#showcase" aria-hidden="true" tabindex="-1"><img src="assets/strip-5.jpg" alt=""><span class="grad"></span><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><span class="chip">Story</span></a>
+        <a class="reel-tile" href="#showcase" aria-hidden="true" tabindex="-1"><img src="assets/strip-6.jpg" alt=""><span class="grad"></span><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><span class="chip">Cinematic</span></a>
+      </div>
+    </section>
+
+    <!-- SHOWCASE -->
+    <section class="section wrap" id="showcase">
+      <div class="section-head reveal">
+        <span class="eyebrow">REAL VEO STUDIO OUTPUT</span>
+        <h2>ทุกคลิปนี้ ระบบ<span class="grad-cyan">สร้างขึ้นจริง</span></h2>
+        <p>ไม่ใช่ภาพสต็อก — ทุกคลิปด้านล่างมาจาก VEO Studio ตั้งแต่พรีเซนเตอร์รีวิว ไวรัลสายเต้น ไปจนคาแรกเตอร์การ์ตูน ครบในเครื่องมือเดียว พร้อมลง Reels, TikTok หรือ LINE OA</p>
+      </div>
+      <div class="showcase-grid">
+        <article class="vcard reveal">
+          <div class="frame">
+            <video src="assets/showcase-1.mp4" poster="assets/showcase-1.jpg" autoplay loop muted playsinline preload="metadata" aria-label="คลิปตัวอย่าง คอนเทนต์ไวรัลสายเต้น"></video>
+            <div class="scan" aria-hidden="true"></div>
+            <span class="badge">9:16</span>
+          </div>
+          <div class="body">
+            <span class="kicker">Viral · Lifestyle</span>
+            <h3>คลิปไวรัลสายเต้น</h3>
+            <p>คาแรกเตอร์เต้นในเซ็ตสีจัด ดึงสายตาใน 3 วิแรก เหมาะกับสายไวรัล</p>
+            <span class="offer">โหมด Viral</span>
+          </div>
+        </article>
+        <article class="vcard reveal">
+          <div class="frame">
+            <video src="assets/showcase-2.mp4" poster="assets/showcase-2.jpg" autoplay loop muted playsinline preload="metadata" aria-label="คลิปตัวอย่าง คาแรกเตอร์อนิเมะขายสินค้า"></video>
+            <div class="scan" aria-hidden="true"></div>
+            <span class="badge">9:16</span>
+          </div>
+          <div class="body">
+            <span class="kicker">Character · อนิเมะ</span>
+            <h3>คาแรกเตอร์การ์ตูนขายของ</h3>
+            <p>มาสคอตอนิเมะเล่าสตอรี่คู่สินค้า สร้างคาแรกเตอร์ให้แบรนด์จำได้</p>
+            <span class="offer">อนิเมะ 2D</span>
+          </div>
+        </article>
+        <article class="vcard reveal">
+          <div class="frame">
+            <video src="assets/showcase-3.mp4" poster="assets/showcase-3.jpg" autoplay loop muted playsinline preload="metadata" aria-label="คลิปตัวอย่าง มาสคอต 3D"></video>
+            <div class="scan" aria-hidden="true"></div>
+            <span class="badge">9:16</span>
+          </div>
+          <div class="body">
+            <span class="kicker">3D · Animation</span>
+            <h3>มาสคอต 3D มีชีวิต</h3>
+            <p>ปั้นตัวการ์ตูนสินค้าให้ขยับ แสดงอารมณ์ และเล่นมุกได้</p>
+            <span class="offer">มาสคอต 3D</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="section wrap" id="features">
+      <div class="section-head reveal">
+        <span class="eyebrow gold">BUILT FOR THAI CREATIVE OPS</span>
+        <h2>ผลิตเร็ว แต่ยัง<span class="grad-text">คุมโทนแบรนด์</span>ได้</h2>
+        <p>เครื่องมือครบตั้งแต่บรีฟจนถึงไฟล์พร้อมโพสต์ ออกแบบมาสำหรับทีมไทยที่ต้องยิงคอนเทนต์ถี่</p>
+      </div>
+      <div class="bento">
+        <article class="cell span3 reveal">
+          <div class="glow" style="background:var(--gold)"></div>
+          <div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H6a1 1 0 00-1 1v16a1 1 0 001 1h12a1 1 0 001-1V8z"/><path d="M14 3v5h5M8.5 13h7M8.5 17h4"/></svg></div>
+          <h3>บรีฟแบบไม่ต้องเขียนยาว</h3>
+          <p>ใส่สินค้า กลุ่มลูกค้า อารมณ์ภาพ และโปรที่มี — ระบบช่วยแตกเป็น prompt ภาษาไทยที่ใช้ขายได้จริง ไม่ต้องนั่งคิดสคริปต์เอง</p>
+          <div class="modes"><span>สินค้า</span><span>กลุ่มลูกค้า</span><span>โปร</span><span>→ prompt ไทย</span></div>
+        </article>
+        <article class="cell span3 cy reveal">
+          <div class="glow" style="background:var(--cyan)"></div>
+          <div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3M10 9l4 2.5L10 14z"/></svg></div>
+          <h3>เลือกโหมดให้ตรงงาน</h3>
+          <p>เริ่มจากเป้าหมายของงาน ไม่ใช่หน้าจอเปล่า — แต่ละโหมดปรับ prompt จังหวะ และมุมกล้องให้เหมาะกับงาน</p>
+          <div class="modes"><span>Commerce</span><span>Viral</span><span>Character</span><span>Cinematic</span><span>Image</span></div>
+        </article>
+        <article class="cell span2 ro reveal">
+          <div class="glow" style="background:var(--rose)"></div>
+          <div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.5 5 5.5.8-4 3.9.9 5.5L12 21l-4.9 2.6.9-5.5-4-3.9 5.5-.8z"/></svg></div>
+          <h3>รีวิวก่อน render</h3>
+          <p>ดู scene, storyboard และ readiness score ก่อนใช้เครดิตจริง</p>
+        </article>
+        <article class="cell span2 reveal">
+          <div class="glow" style="background:var(--gold)"></div>
+          <div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v10M8 9l4 4 4-4"/><path d="M5 15v3a1 1 0 001 1h12a1 1 0 001-1v-3"/></svg></div>
+          <h3>เสียงพากย์ + ซับไทย</h3>
+          <p>พากย์ไทยโทนเลือกได้ พร้อมซับฝังในคลิป ดาวน์โหลดได้ทั้งแบบมี/ไม่มีซับ</p>
+        </article>
+        <article class="cell span2 cy reveal">
+          <div class="glow" style="background:var(--cyan)"></div>
+          <div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><path d="M14 17.5h7M17.5 14v7"/></svg></div>
+          <h3>Reference-locked</h3>
+          <p>ล็อกสินค้าและตัวละครให้หน้าตาคงที่ทุกซีน ไม่หลุดคาแรกเตอร์</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section wrap" id="how">
+      <div class="section-head reveal">
+        <span class="eyebrow">HOW IT WORKS</span>
+        <h2>4 ขั้น จากไอเดียถึงไฟล์</h2>
+      </div>
+      <div class="steps">
+        <div class="step reveal"><div class="num">01</div><h3>ใส่บรีฟ</h3><p>สินค้า กลุ่มลูกค้า และ offer ที่มี — เป็นภาษาไทยธรรมดา</p></div>
+        <div class="step reveal"><div class="num">02</div><h3>เลือกโหมด</h3><p>ระบบแตก prompt และ storyboard ให้ตามโหมดที่เลือก</p></div>
+        <div class="step reveal"><div class="num">03</div><h3>รีวิว &amp; ปรับ</h3><p>แก้สคริปต์ ภาพเฟรม และเสียงก่อน render จริง</p></div>
+        <div class="step reveal"><div class="num">04</div><h3>Render &amp; โหลด</h3><p>ได้คลิป 9:16 พร้อมซับไทย ดาวน์โหลดไปโพสต์ได้เลย</p></div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="section wrap" id="pricing">
+      <div class="section-head reveal" style="text-align:center; margin-inline:auto;">
+        <span class="eyebrow gold" style="justify-content:center;">BETA PRICING</span>
+        <h2>ราคา <span class="grad-text">beta</span> เริ่มต้นง่าย</h2>
+        <p style="margin-inline:auto;">แพ็กรายเดือนแบบโควตาคลิป — โหมด Fast คลิปละ 5 วินาที เหมาะกับคนที่อยากยิงคอนเทนต์ถี่ในต้นทุนที่คุมได้</p>
+      </div>
+      <div class="price-grid">
+        <div class="plan reveal">
+          <div class="pname">Beta 399</div>
+          <div class="price"><b>฿399</b><span style="color:var(--muted)">/ เดือน</span></div>
+          <div class="quota">50 คลิป / เดือน</div>
+          <ul>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> คลิป 9:16 พร้อมโพสต์</li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> โหมด Fast · ความยาว 5 วินาที</li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> เสียงพากย์ไทย + ซับฝังในคลิป</li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> ครบทุกโหมด: Commerce · Viral · Character · Cinematic · Image</li>
+          </ul>
+          <a class="btn ghost" href="https://xn--42cfc0k1a8b.net/pricing">เลือกแพ็ก Beta 399</a>
+        </div>
+
+        <div class="plan feat reveal">
+          <span class="flag">คุ้มสุด</span>
+          <div class="pname">Beta 799</div>
+          <div class="price"><b>฿799</b><span style="color:var(--muted)">/ เดือน</span></div>
+          <div class="quota">100 คลิป / เดือน</div>
+          <ul>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> ทุกอย่างในแพ็ก Beta 399</li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> โควตา 2 เท่า สำหรับยิงคอนเทนต์ถี่</li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> โควตา 100 คลิป พอสำหรับแคมเปญยาว ๆ</li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> เหมาะกับทีม/เอเจนซีที่ผลิตประจำ</li>
+          </ul>
+          <a class="btn primary" href="https://xn--42cfc0k1a8b.net/pricing">เลือกแพ็ก Beta 799</a>
+        </div>
+      </div>
+      <p class="price-note">* ราคาช่วง beta · โควตาจำกัดต่อเดือน (ใช้ครบแล้วรอรีเซ็ตต้นเดือนถัดไป) · ดูรายละเอียดและวิธีสมัครที่หน้า Pricing</p>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section wrap" id="faq">
+      <div class="section-head reveal" style="text-align:center; margin-inline:auto;">
+        <span class="eyebrow" style="justify-content:center;">FAQ</span>
+        <h2>คำถามที่พบบ่อย</h2>
+      </div>
+      <div class="faq">
+        <details class="reveal" open>
+          <summary>ต่างจากตัดต่อเองยังไง?<svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+          <div class="ans">VEO Studio เริ่มจากบรีฟภาษาไทยแล้วช่วยคิด prompt, storyboard, เสียง และประกอบเป็นคลิปให้เอง คุณโฟกัสที่ไอเดียและการขาย ไม่ต้องนั่งไทม์ไลน์ตัดต่อทีละเฟรม</div>
+        </details>
+        <details class="reveal">
+          <summary>คลิปยาวเท่าไหร่ และไฟล์เป็นแนวไหน?<svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+          <div class="ans">ช่วง beta เป็นคลิป 9:16 โหมด Fast ความยาว 5 วินาทีต่อคลิป เหมาะกับ hook / โปรโมชันสั้น ดาวน์โหลดได้ทั้งแบบมีซับไทยและไม่มีซับ</div>
+        </details>
+        <details class="reveal">
+          <summary>ภาษาไทยและบริบทการขายดีจริงไหม?<svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+          <div class="ans">ระบบออกแบบมาแบบ Thai-first — บรีฟ พากย์ และซับเป็นภาษาไทย เข้าใจสำนวนการขายและโปรโมชันแบบไทย ไม่ใช่การแปลตรงจากอังกฤษ</div>
+        </details>
+        <details class="reveal">
+          <summary>ใช้กับสินค้าหรือธุรกิจแบบไหนได้บ้าง?<svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+          <div class="ans">ครีเอเตอร์ขายสินค้า ร้านค้าออนไลน์ คลินิกและแบรนด์บริการ ร้านอาหาร/คาเฟ่ รวมถึงทีม marketing และเอเจนซีที่ต้องผลิตคอนเทนต์วิดีโอถี่ ๆ</div>
+        </details>
+        <details class="reveal">
+          <summary>สมัครและยกเลิกยังไง?<svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+          <div class="ans">เริ่มได้โดยไม่ต้องผูกบัตร เลือกแพ็ก beta รายเดือนแบบโควตา และยกเลิกได้ทุกเมื่อ ดูขั้นตอนสมัครที่หน้า Pricing</div>
+        </details>
+      </div>
+    </section>
+
+    <!-- CLOSING CTA -->
+    <section class="wrap" style="padding-bottom:20px;">
+      <div class="final reveal">
+        <span class="eyebrow" style="justify-content:center;">พร้อมลองหรือยัง</span>
+        <h2 style="margin-top:14px;">สร้าง Reel แรกของคุณ<br><span class="grad-text">ภายใน 10 นาที</span></h2>
+        <p>ใส่สินค้า กลุ่มลูกค้า และ offer ที่มี ระบบช่วยแตก prompt และ storyboard ให้ทันที ก่อนเริ่ม render จริง</p>
+        <div class="actions">
+          <a class="btn primary" href="https://xn--42cfc0k1a8b.net/create">
+            เริ่มสร้าง Reel
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn cyan" href="https://xn--42cfc0k1a8b.net/playbook">ดู Playbook</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="wrap foot-grid">
+      <a class="brand" href="/" aria-label="VEO Studio หน้าแรก">
+        <svg class="mark" viewBox="0 0 64 64" aria-hidden="true">
+          <defs><linearGradient id="bm2" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#35d2e6"/><stop offset="50%" stop-color="#f0bf63"/><stop offset="100%" stop-color="#e34d86"/>
+          </linearGradient></defs>
+          <rect width="64" height="64" rx="16" fill="#0e1118" stroke="rgba(255,255,255,.1)"/>
+          <path d="M20 16 L44 16 L44 22 L26 22 L26 30 L40 30 L40 36 L26 36 L26 48 L20 48 Z" fill="url(#bm2)"/>
+          <path d="M40 40 L52 47 L40 54 Z" fill="#f0bf63"/>
+        </svg>
+        <span><b>VEO</b> <span class="accent">Studio</span></span>
+      </a>
+      <nav class="foot-links" aria-label="ลิงก์ท้ายเว็บไซต์">
+        <a href="https://xn--42cfc0k1a8b.net/create">เริ่มสร้าง</a>
+        <a href="https://xn--42cfc0k1a8b.net/pricing">ราคา</a>
+        <a href="https://xn--42cfc0k1a8b.net/playbook">Playbook</a>
+        <a href="#faq">คำถาม</a>
+      </nav>
+      <p class="foot-meta">© 2026 VEO Studio · Thai-first AI Reel Studio</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      // sticky nav shadow
+      var nav = document.getElementById('nav');
+      var onScroll = function () { nav.classList.toggle('scrolled', window.scrollY > 8); };
+      onScroll();
+      window.addEventListener('scroll', onScroll, { passive: true });
+
+      // mobile menu
+      var toggle = document.querySelector('.nav-toggle');
+      var menu = document.getElementById('nav-links');
+      toggle.addEventListener('click', function () {
+        var open = menu.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        toggle.setAttribute('aria-label', open ? 'ปิดเมนู' : 'เปิดเมนู');
+      });
+      menu.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', function () {
+          menu.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+          toggle.setAttribute('aria-label', 'เปิดเมนู');
+        });
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && menu.classList.contains('open')) {
+          menu.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+          toggle.focus();
+        }
+      });
+
+      // reveal on scroll
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var els = document.querySelectorAll('.reveal');
+      if (reduce || !('IntersectionObserver' in window)) {
+        els.forEach(function (el) { el.classList.add('in'); });
+      } else {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (en) {
+            if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+          });
+        }, { threshold: 0.14, rootMargin: '0px 0px -8% 0px' });
+        els.forEach(function (el) { io.observe(el); });
+      }
+
+      // videos are the product content — autoplay muted loops regardless of reduced-motion,
+      // gated on in-view for perf. (Decorative motion like the reel-strip scroll still respects
+      // reduced-motion via CSS.)
+      var vids = document.querySelectorAll('.vcard video, .reel video');
+      var tryPlay = function (v) { var p = v.play(); if (p && p.catch) p.catch(function(){}); };
+      if ('IntersectionObserver' in window) {
+        var vio = new IntersectionObserver(function (entries) {
+          entries.forEach(function (en) {
+            if (en.isIntersecting) tryPlay(en.target);
+            else en.target.pause();
+          });
+        }, { threshold: 0.1, rootMargin: '0px 0px 20% 0px' });
+        vids.forEach(function (v) { vio.observe(v); });
+      } else {
+        vids.forEach(tryPlay);
+      }
+    })();
+  </script>
+</body>
+</html>

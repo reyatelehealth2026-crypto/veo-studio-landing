@@ -1,0 +1,11 @@
+# OS / editor junk
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log
+
+# Vercel local
+.vercel
+
+# Node (not used, but ignore if ever added)
+node_modules
